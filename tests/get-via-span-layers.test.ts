@@ -31,9 +31,12 @@ test("getPcbViaSpanLayers honors through_hole and explicit drill bounds", () => 
     layers: ["top", "bottom"],
   }
 
-  expect(
-    getPcbViaSpanLayers({ ...baseVia, through_hole: true }, 4),
-  ).toEqual(["top", "inner1", "inner2", "bottom"])
+  expect(getPcbViaSpanLayers({ ...baseVia, through_hole: true }, 4)).toEqual([
+    "top",
+    "inner1",
+    "inner2",
+    "bottom",
+  ])
 
   expect(
     getPcbViaSpanLayers(
